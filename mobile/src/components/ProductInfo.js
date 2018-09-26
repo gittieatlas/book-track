@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator, Image } from 'react-native';
+import { View, Text, ActivityIndicator, Image, Button } from 'react-native';
 import { styles } from './styles.css';
+import axios from 'axios';
 
 export default class ProductInfo extends Component {
   static navigationOptions = {
@@ -36,8 +37,30 @@ export default class ProductInfo extends Component {
     }
   }
 
+  saveBook = async () => {
+    const bookData = {
+      barcode: this.props.navigation.getParam('barcode', 0),
+      title: this.state.book.volumeInfo.title,
+      subtitle: this.state.book.volumeInfo.subtitle,
+      authors: this.state.book.volumeInfo.authors,
+      imageUrl: this.state.book.volumeInfo.imageLinks.smallThumbnail
+    };
+    console.log(bookData);
+
+    try {
+      const { data: book } = await axios.post(
+        'http://f042a9f0.ngrok.io/api/books',
+        bookData
+      );
+      console.log(book);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   render() {
     const { isLoading, book } = this.state;
+    const { saveBook } = this;
 
     if (isLoading) {
       return (
@@ -54,7 +77,7 @@ export default class ProductInfo extends Component {
           resizeMode="contain"
           style={{ width: '100%', height: 200 }}
         />
-        <View>
+        <View style={[styles.mBottom2]}>
           <Text style={[styles.text, styles.titleText, styles.mTop2]}>
             {book.volumeInfo.title}
           </Text>
@@ -68,6 +91,7 @@ export default class ProductInfo extends Component {
             </Text>
           ))}
         </View>
+        <Button title="Save Book" onPress={saveBook} />
       </View>
     );
   }

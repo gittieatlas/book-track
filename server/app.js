@@ -26,7 +26,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal server error');
 });
 
-db.sync().then(() => {
+db.sync({ force: false }).then(() => {
   console.log('db synced');
   app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`));
 });

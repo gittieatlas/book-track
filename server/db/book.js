@@ -2,6 +2,10 @@ const Sequelize = require('sequelize');
 const db = require('./database');
 
 const Book = db.define('book', {
+  barcode: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   title: {
     type: Sequelize.STRING,
     allowNull: false,
