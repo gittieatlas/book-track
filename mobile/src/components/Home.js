@@ -31,8 +31,8 @@ export default class HomeScreen extends Component {
           favorite books, and keep track of borrowed and lent books.
         </Text>
 
-        <Button text="View Books" onPress={() => navigate('List')} />
         <Button text="Add a book" onPress={() => navigate('Scan')} />
+        <Button text="View Books" onPress={() => navigate('List')} />
       </View>
     );
   }

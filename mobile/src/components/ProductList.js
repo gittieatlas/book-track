@@ -5,7 +5,7 @@ import { styles } from './styles.css';
 
 export default class ProductList extends Component {
   static navigationOptions = {
-    title: 'Product List'
+    title: 'Book List'
   };
 
   constructor(props) {

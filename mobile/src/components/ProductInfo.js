@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default class ProductInfo extends Component {
   static navigationOptions = {
-    title: 'Product Info'
+    title: 'Book Info'
   };
 
   constructor(props) {
@@ -15,9 +15,7 @@ export default class ProductInfo extends Component {
 
   async componentDidMount() {
     // Query the book database by ISBN code.
-    // const isbn = '0984782850'; // Steve Jobs book
     const isbn = this.props.navigation.getParam('barcode', 0);
-
     const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`;
 
     try {
@@ -48,11 +46,10 @@ export default class ProductInfo extends Component {
     console.log(bookData);
 
     try {
-      const { data: book } = await axios.post(
-        'http://f042a9f0.ngrok.io/api/books',
-        bookData
-      );
-      console.log(book);
+      await axios.post('http://f042a9f0.ngrok.io/api/books', bookData);
+
+      const { navigate } = this.props.navigation;
+      navigate('Home');
     } catch (error) {
       console.log(error);
     }
