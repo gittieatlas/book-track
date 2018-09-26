@@ -23,8 +23,6 @@ router.get('/:bookId', async (req, res, next) => {
 
 // POST /api/books/
 router.post('/', async (req, res, next) => {
-  console.log('in books post', req.body);
-
   try {
     res.status(201).json(await Book.create(req.body));
   } catch (error) {

@@ -43,7 +43,6 @@ export default class ProductInfo extends Component {
       authors: this.state.book.volumeInfo.authors,
       imageUrl: this.state.book.volumeInfo.imageLinks.smallThumbnail
     };
-    console.log(bookData);
 
     try {
       await axios.post('http://f042a9f0.ngrok.io/api/books', bookData);
