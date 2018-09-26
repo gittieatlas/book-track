@@ -1,0 +1,3 @@
+rootProject.name = 'booktrack'
+
+include ':app'
