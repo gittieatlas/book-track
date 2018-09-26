@@ -12,7 +12,7 @@ const Button = props => {
 
 export default class HomeScreen extends Component {
   static navigationOptions = {
-    title: 'Book Stack'
+    title: 'Book Track'
   };
   render() {
     const { navigate } = this.props.navigation;
@@ -23,7 +23,7 @@ export default class HomeScreen extends Component {
           source={require('../../assets/256x256.png')}
         />
         <Text style={styles.text}>
-          BookStack is a powerful book management app that gives you access to
+          Book Track is a powerful book management app that gives you access to
           your entire book catalog, anywhere.
         </Text>
         <Text style={styles.text}>
