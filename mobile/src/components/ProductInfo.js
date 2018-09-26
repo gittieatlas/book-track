@@ -55,19 +55,18 @@ export default class ProductInfo extends Component {
           style={{ width: '100%', height: 200 }}
         />
         <View>
-          <Text style={styles.text}>{book.volumeInfo.title}</Text>
+          <Text style={[styles.text, styles.titleText, styles.mTop2]}>
+            {book.volumeInfo.title}
+          </Text>
           <Text style={styles.text}>{book.volumeInfo.subtitle}</Text>
-          <Text style={styles.text}>Authors: {book.volumeInfo.authors}</Text>
-          <Text style={styles.text}>
-            Page Count: {book.volumeInfo.pageCount}
+          <Text style={[styles.text, styles.titleText, styles.mTop2]}>
+            Authors:
           </Text>
-          <Text style={styles.text}>
-            Publisher: {book.volumeInfo.publisher}
-          </Text>
-          <Text style={styles.text}>
-            Publish Date: {book.volumeInfo.publishedDate}
-          </Text>
-          <Text style={styles.text}>{book.accessInfo.webReaderLink}</Text>
+          {book.volumeInfo.authors.map(author => (
+            <Text key={author} style={styles.text}>
+              {author}
+            </Text>
+          ))}
         </View>
       </View>
     );

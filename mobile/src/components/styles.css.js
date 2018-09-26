@@ -46,6 +46,12 @@ export const styles = {
   mBottom2: {
     marginBottom: 16
   },
+  mTop: {
+    marginTop: 8
+  },
+  mTop2: {
+    marginTop: 16
+  },
   container2: {
     flex: 1,
     flexDirection: 'column',
@@ -65,6 +71,9 @@ export const styles = {
     paddingRight: 60,
     fontSize: 18,
     lineHeight: 30
+  },
+  titleText: {
+    fontWeight: '500'
   },
   button: {
     width: '100%',

@@ -20,7 +20,7 @@ export default class HomeScreen extends Component {
       <View style={styles.container2}>
         <Image
           style={styles.bookImage}
-          source={require('../../../assets/256x256.png')}
+          source={require('../../assets/256x256.png')}
         />
         <Text style={styles.text}>
           Book Track is a powerful book management app that gives you access to
