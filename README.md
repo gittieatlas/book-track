@@ -5,6 +5,6 @@ It allows you to quickly find any book in your library, share your favorite book
 
 ### Directories
 
-**api** - server code: express and sequelize
+**API** - Server: express and sequelize
 
-**mobile** - react native app
+**Mobile** - React Native App
