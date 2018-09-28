@@ -7,4 +7,4 @@ It allows you to quickly find any book in your library, share your favorite book
 
 **API** - Server: express and sequelize
 
-**Mobile** - React Native App
+**Mobile** - React Native app
